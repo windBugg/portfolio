@@ -5,32 +5,290 @@
     </head>
 
     <style>
-        div {text-align: center;}
+        .popup .overlay {
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100vw;
+            height: 100vh;
 
+            background: rgba(0, 0, 0, 0);
+            z-index: 5;
+            display: none;
+        }
 
+        .popup .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: #fff;
 
+            width: 950px;
+            height: 420px;
+            z-index: 6;
+
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .popup .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 30px;
+            height: 30px;
+
+            background: #222;
+            color: #fff;
+
+            font-size: 25px;
+            font-weight: 600;
+            line-height: 30px;
+            text-align: center;
+
+            cursor: pointer;
+        }
+
+        .popup.active .overlay {
+            display: block;
+        }
+
+        .popup.active .content {
+            transition: all 300ms ease-in-out;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        
+        #book {
+          position: absolute;
+          z-index : 3;
+          
+          top : 50%;
+          left: 50%;
+          
+          margin-top : -232px;
+          margin-left: -336px;
+        }
+        
+        #bookstand {
+          position: absolute;
+          z-index : 1;
+          
+          left: 3%;
+          top : -2%;
+        }
 
     </style>
 
     <body style="background-color: #3b3245;">
-        <div>
-            <b>
-                <p style="font-family:'Courier New'; font-size:48px">Portfolio Site [W.I.P.]</p>
-            </b>
 
-            <a href="10thGrade.html"> <button class="button"> 10th Grade </button> </a>
-            <a href="11thGrade.html"> <button class="button"> 11th Grade </button> </a>
-            <a href="product.html">   <button class="button"> Personal </button>   </a>
+        <!-- Bouncing Cards -->
+        <div class="popup" id="popup-1">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup()" data-popup="popup-1">&times;</div>
+                <h1 style="text-align: center; font-family:'Courier New'">Bouncing Cards - GIF Assignment</h1>
+                
+                <div id="wrapperDiv">
 
+                    <div id="div1" style="padding:20px;float:left">
+                        <img id="cards" src="../Resources/Grade 10/Cards_final_1.gif" width="260" height="260">
+                    </div>
+
+                    <div id="div2" style="padding:20px;float:left">
+                        <p style="font-size: 20px; font-family:'Arial'">
+                                 <b>Project Name:</b> Animated GIF
+                            <br> <b>Piece Name:</b>  Bouncing Card
+                            <br> <b>Final Product Creation Date:</b> Sep. 29th 2020
+                            <br> <b>Tools Used:</b> Photopea
+                            <br>
+                            <br> <b>Comment:</b>
+                            <br> Originally I wanted to give the card a trail
+                            <br> just like in the original Microsoft Solitare but
+                            <br> I had so many frames photopea was barely working
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div>
-            <a href="http://www.kingdomofloathing.com"><img src="http://sigs.kingdomofloathing.com/player_3235174/mode_bigsig/border_1/l2_created/s1_num_fam/s2_ascensions/s3_turnsplayed/playerfeed_3235174_bigsig.gif" border="0" /></a>
+        <!-- After Hours Cleaning -->
+        <div class="popup" id="popup-2">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup()" data-popup="popup-2">&times;</div>
+                <h2 style="text-align: center; font-family:'Courier New'">After Hours Cleaning - Expressive Stickfigures</h2>
+                
+                <div id="wrapperDiv">
+
+                    <div id="div1" style="padding:20px;float:left">
+                        <img id="cards" src="../Resources/Grade 10/r1f_display.png" width="412" height="281">
+                    </div>
+
+                    <div id="div2" style="padding:20px;float:left">
+                        <p style="font-size: 20px; font-family:'Arial'">
+                                 <b>Project Name:</b> Expressive Stickfigures
+                            <br> <b>Piece Name:</b> After hours cleaning
+                            <br> <b>Final Product Creation Date:</b> Sep. 30th 2020
+                            <br> <b>Tools Used:</b> Photopea
+                            <br>
+                            <br> <b>Comment:</b>
+                            <br> I created a psuedo-rig for the humanoid object.
+                            <br> Originally I wanted this to be like, a secret
+                            <br> lab after hours but I made it too complex.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
 
+        <!-- Patterns and Lines -->
+        <div class="popup" id="popup-3">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup()" data-popup="popup-3">&times;</div>
+                <h2 style="text-align: center; font-family:'Courier New'">Patterns and Lines</h2>
+                
+                <div id="wrapperDiv">
+
+                    <div id="div1" style="padding:20px;float:left">
+                        <button onclick="patternButton()"> <img id="patternButton" src="../Resources/Grade 10/patterns/clickme.png" width="250" height="250"> </button>
+                    </div>
+
+                    <div id="div2" style="padding:20px;float:left">
+                        <p style="font-size: 20px; font-family:'Arial'">
+                                 <b>Project Name:</b> Patterns and Lines
+                            <br> <b>Final Product Creation Date:</b>
+                            <br> <b>Tools Used:</b> Photopea
+                            <br>
+                            <br> <b> Comment: </b>
+                            <br> I had a lot of fun designing weird looking
+                            <br> patterns and designes with this one.
+                            <br> I think I got a bit carried away with the
+                            <br> optical illusions though.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CD Album Cover -->
+        <div class="popup" id="popup-4">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup()" data-popup="popup-4">&times;</div>
+                <h2 style="text-align: center; font-family:'Courier New'">Ord's Kangaroo Rat - CD Album Cover</h2>
+                
+                <div id="wrapperDiv">
+                    <div id="div1" style="padding:20px;float:left">
+                        <img id="cards" src="../Resources/Grade 10/cd_album.png" width="250" height="250">
+                    </div>
+
+                    <div id="div2" style="padding:20px;float:left">
+                        <p style="font-size: 20px; font-family:'Arial'">
+                                 <b>Project Name:</b> CD Album Cover
+                            <br> <b>Piece Name:</b> Ord's Kangaroo Rat Album
+                            <br> <b>Final Product Creation Date:</b> Oct. 19th 2020
+                            <br> <b>Tools Used:</b> Photopea, Wikipedia, Flickr
+                            <br>
+                            <br> <b>Comment:</b>
+                            <br> It took a few random articles before I
+                            <br> got something I could use for the band name.
+                            <br> Don't know whether I regret not going with
+                            <br> <a href="https://en.wikipedia.org/wiki/Evil_Bong_3D%3A_The_Wrath_of_Bong">Evil Bong 3D: Wrath of Bong</a> though.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Easter Egg #1 -->
+        <div class="popup" id="egg1">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup()" data-popup="egg1">&times;</div>
+                <h2 style="text-align: center; font-family:'Courier New'">Smartass</h2>
+                
+            </div>
+        </div>
+
+        <img src="../Resources/Bookstand.png" id="bookstand" usemap="#bookstandmap">
+        <img src="../Resources/book.png" id="book" usemap="#bookmap">
+        
+        <map name="bookmap" >   <!--  X, Y  -->
+          <area shape="poly" coords="64,57,   192,35,  211,147, 82,168"  href="#" onclick="togglePopup()" data-popup="popup-1">
+          <area shape="poly" coords="166,255, 324,276, 310,375, 154,355" href="#" onclick="togglePopup()" data-popup="popup-2">
+          <area shape="poly" coords="468,70,  604,56,  588,188, 452,172" href="#" onclick="togglePopup()" data-popup="popup-3">
+          <area shape="poly" coords="347,261, 467,243, 484,358, 364,375" href="#" onclick="togglePopup()" data-popup="popup-4">
+        </map>
+        
+        <map name="bookstandmap">
+          <area shape="poly" coords="80,265, 220,243, 240,380, 100,400" href="#" onclick="togglePopup()" data-popup="egg1">
+        </map>
     </body>
 </html>
 
 <script>
+    var img_num = 0;
+    
+    // Handles popup functionality
+    function togglePopup()
+    {
+        var toToggle = event.target.getAttribute("data-popup");
+        document.getElementById(toToggle).classList.toggle("active");
+    }
+
+    // This function changes which pattern gets displayed
+    function patternDisplayChange()
+    {
+        if (img_num == 6)
+        {
+            img_num = 1;
+        }
+        else
+        {
+            img_num += 1;
+        }
+    }
+
+    // This function changes the image on the paterns display
+    function patternDisplay()
+    {
+        if (img_num == 0)
+        {
+            document.getElementById("patternButton").src = "../Resources/Grade 10/patterns/clickme.png";
+        }
+        else if (img_num == 1)
+        {
+            document.getElementById("patternButton").src = "../Resources/Grade 10/patterns/Pattern1.png";
+        }
+        else if (img_num == 2)
+        {
+            document.getElementById("patternButton").src = "../Resources/Grade 10/patterns/Pattern2.png";
+        }
+        else if (img_num == 3)
+        {
+            document.getElementById("patternButton").src = "../Resources/Grade 10/patterns/Pattern3.png";
+        }
+        else if (img_num == 4)
+        {
+            document.getElementById("patternButton").src = "../Resources/Grade 10/patterns/Pattern4.png";
+        }
+        else if (img_num == 5)
+        {
+            document.getElementById("patternButton").src = "../Resources/Grade 10/patterns/Pattern5.png";
+        }
+        else if (img_num == 6)
+        {
+            document.getElementById("patternButton").src = "../Resources/Grade 10/patterns/Pattern6.png";
+        }
+    }
+
+    // Compound function for both changing and updating image
+    function patternButton(){
+      patternDisplayChange();
+      patternDisplay();
+    }
 
 </script>
