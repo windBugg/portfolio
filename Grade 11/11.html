@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>windBugg_</title>
+    </head>
+
+    <style>
+        .popup .overlay {
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100vw;
+            height: 100vh;
+
+            background: rgba(0, 0, 0, 0);
+            z-index: 5;
+            display: none;
+        }
+
+        .popup .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: #fff;
+            border: 5px solid #73AD21;
+            align-content:  center;
+
+            width: 900px;
+            height: 650px;
+            z-index: 6;
+
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .popup .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 30px;
+            height: 30px;
+
+            background: #222;
+            color: #fff;
+
+            font-size: 25px;
+            font-weight: 600;
+            line-height: 30px;
+            text-align: center;
+
+            cursor: pointer;
+        }
+
+        .popup.active .overlay {
+            display: block;
+        }
+
+        .popup.active .content {
+            transition: all 300ms ease-in-out;
+            transform: translate(-50%, -50%) scale(1);
+        }
+      
+      #centerBar {
+        position: absolute;
+        
+        align-content:  center;
+        align-self:     center;
+        text-align:     center;
+        
+        left: 50%;
+        top:  -5%;
+        z-index: -5;
+        margin-left: -512px;
+        
+        height: 2250px;
+        width:  1024px;
+        
+        background: #000000;
+      }
+
+      #tab {
+        position: relative;
+        animation: tab_norm 1s infinite alternate ease-in-out;
+        align-content:  center;
+        cursor: pointer;
+      }
+
+      #tab2 {
+        position: relative;
+        animation: tab_norm2 1.15s infinite alternate ease-in-out;
+        align-content:  center;
+        cursor: pointer;
+      }
+
+      #tab3 {
+        position: relative;
+        animation: tab_norm3 1.25s infinite alternate ease-in-out;
+        align-content:  center;
+        cursor: pointer;
+      }
+
+      #tab4 {
+        position: relative;
+        animation: tab_norm4 1.35s infinite alternate ease-in-out;
+        align-content:  center;
+        cursor: pointer;
+      }
+      
+      #tab5 {
+        position: relative;
+        animation: tab_norm5 1.15s infinite alternate ease-in-out;
+        align-content:  center;
+        cursor: pointer;
+      }
+
+      #tab6 {
+        position: relative;
+        animation: tab_norm6 1.05s infinite alternate ease-in-out;
+        align-content:  center;
+        cursor: pointer;
+      }
+
+      #image1 {
+        margin: auto;
+        
+        width  : 50%;
+        height : auto;
+      }
+      
+      #image2 {
+        margin: auto;
+        
+        width  : 70%;
+        height : auto;
+      }
+
+      @keyframes tab_norm {
+        0%    {top:0px;}
+        100%   {top:20px;}
+      }
+      
+      @keyframes tab_norm2 {
+        0%    {top:0px;}
+        100%   {top:20px;}
+      }
+
+      @keyframes tab_norm3 {
+        0%    {top:60px;}
+        100%   {top:80px;}
+      }
+      
+      @keyframes tab_norm4 {
+        0%    {top:60px;}
+        100%   {top:80px;}
+      }
+
+      @keyframes tab_norm5 {
+        0%    {top:120px;}
+        100%   {top:140px;}
+      }
+      
+      @keyframes tab_norm6 {
+        0%    {top:120px;}
+        100%   {top:140px;}
+      }
+
+    </style>
+
+    <body style="background-image: url('bgTiles2.png');background-repeat: round;">
+        <div id="centerBar"></div>
+        
+        <b><p style="font-family:'Courier New'; font-size:48px; text-align: center; color:red; text-align: center;">Grade 11 - Projects</p></b>
+
+        <!-- Buisness Card #1 -->
+        <div class="popup" id="popup-1">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup()" data-popup="popup-1">&times;</div>
+                <h1 style="text-align: center; font-family:'Courier New'">Static - Buisness Cards</h1>
+
+                <iframe src="Displays/b_card_1.html" title="description" width="845" height="500"></iframe>
+
+            </div>
+        </div>
+        
+        <!-- Buisness Card #2 -->
+        <div class="popup" id="popup-2">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup()" data-popup="popup-2">&times;</div>
+                <h1 style="text-align: center; font-family:'Courier New'">LCD Retro - Buisness Cards</h1>
+
+                <iframe src="Displays/b_card_2.html" title="description" width="845" height="500"></iframe>
+
+            </div>
+        </div>
+        
+        <!-- Dream Collage -->
+        <div class="popup" id="popup-3">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup()" data-popup="popup-3">&times;</div>
+                <h1 style="text-align: center; font-family:'Courier New'">Void Watcher - Dream Collage</h1>
+
+                <iframe src="Displays/dream.html" title="description" width="845" height="500"></iframe>
+
+            </div>
+        </div>
+
+        <!-- Logo Design -->
+        <div class="popup" id="popup-4">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup()" data-popup="popup-4">&times;</div>
+                <h1 style="text-align: center; font-family:'Courier New'">Gamers Paradise - Logo Design</h1>
+
+                <iframe src="Displays/logo.html" title="description" width="845" height="500"></iframe>
+
+            </div>
+        </div>
+        
+        <!-- Superhero Emblem -->
+        <div class="popup" id="popup-5">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup()" data-popup="popup-5">&times;</div>
+                <h1 style="text-align: center; font-family:'Courier New'">Superhero Emblem</h1>
+
+                <iframe src="Displays/hero.html" title="description" width="845" height="500"></iframe>
+
+            </div>
+        </div>
+        
+        <!-- Masterweb -->
+        <div class="popup" id="popup-6">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup()" data-popup="popup-6">&times;</div>
+                <h1 style="text-align: center; font-family:'Courier New'">Masterweb Deluxe - Another Album Cover</h1>
+
+                <iframe src="Displays/mweb.html" title="description" width="845" height="500"></iframe>
+
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+          <img src="tab_card1.png" id="tab"   style="right:  50px;" onclick="togglePopup()" data-popup="popup-1"/>
+          <img src="tab_card2.png" id="tab2"  style="left:   50px;" onclick="togglePopup()" data-popup="popup-2"/>
+          <img src="tab_dream.png" id="tab3"  style="right:  50px;" onclick="togglePopup()" data-popup="popup-3"/>
+          <img src="tab_logo.png"  id="tab4"  style="left:   50px;" onclick="togglePopup()" data-popup="popup-4"/>
+          <img src="tab_hero.png"  id="tab5"  style="right:  50px;" onclick="togglePopup()" data-popup="popup-5"/>
+          <img src="tab_mweb.png"  id="tab6"  style="left:   50px;" onclick="togglePopup()" data-popup="popup-6"/>
+        </div>
+
+        <div style="position: absolute;  text-align: center; top: 1350px; left: 210px;">
+          <h1 style="color:red; font-family:'Courier New';">I made a few games this year too!</h1>
+          
+          <iframe src="https://widgets.gamejolt.com/package/v1?key=nq4gTmAp" frameborder="0" width="500" height="245"></iframe>
+          <iframe src="https://widgets.gamejolt.com/package/v1?key=aVrT5VfD" frameborder="0" width="500" height="245"></iframe>
+        </div>
+
+
+        <div style="position: absolute;  text-align: center; top: 2100px; left: 300px;">
+            <a href="http://www.kingdomofloathing.com"><img src="http://sigs.kingdomofloathing.com/player_3235174/mode_bigsig/border_1/l2_created/s1_num_fam/s2_ascensions/s3_turnsplayed/playerfeed_3235174_bigsig.gif" border="0" /></a>
+        </div>
+
+    </body>
+</html>
+
+<script>
+    // Handles popup functionality
+    function togglePopup()
+    {
+        document.documentElement.scrollTop = 0;
+        var toToggle = event.target.getAttribute("data-popup");
+        document.getElementById(toToggle).classList.toggle("active");
+    }
+</script>
